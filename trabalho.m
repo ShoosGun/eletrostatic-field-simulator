@@ -64,21 +64,21 @@ clc
 significadoDasCores = struct("c1-0-1",20, "c0-0-1",0);%, "c0-1-0",40, "c1-0-0",10);
 Imagem = imread('problema.png');
 A = ImagemParaProblema(Imagem,significadoDasCores);
-%A = [struct("inicial",true, "valor",40) struct("inicial",true, "valor",40) struct("inicial",true, "valor",40) struct("inicial",true, "valor",40);
-%     struct("inicial",true, "valor",20) struct("inicial",false, "valor",0) struct("inicial",false, "valor",0) struct("inicial",true, "valor",0);
-%     struct("inicial",true, "valor",20) struct("inicial",false, "valor",0) struct("inicial",false, "valor",0) struct("inicial",true, "valor",0);
-%     struct("inicial",true, "valor",10) struct("inicial",true, "valor",10) struct("inicial",true, "valor",10) struct("inicial",true, "valor",10)
-%    ];
+A = [struct("inicial",true, "valor",40) struct("inicial",true, "valor",40) struct("inicial",true, "valor",40) struct("inicial",true, "valor",40);
+     struct("inicial",true, "valor",20) struct("inicial",false, "valor",0) struct("inicial",false, "valor",0) struct("inicial",true, "valor",0);
+     struct("inicial",true, "valor",20) struct("inicial",false, "valor",0) struct("inicial",false, "valor",0) struct("inicial",true, "valor",0);
+     struct("inicial",true, "valor",10) struct("inicial",true, "valor",10) struct("inicial",true, "valor",10) struct("inicial",true, "valor",10)
+    ];
 V = SolvePotentialWithIteration(A,500, 0.01);
 
 xSize = size(V,1);
 ySize = size(V,2);
 tx = 1:1:xSize;
 ty = 1:1:ySize;
-%[xx, yy] = meshgrid (tx, ty);
+[xx, yy] = meshgrid (tx, ty);
 
-%mesh (tx, ty, V');
-contour(tx, ty, V', 0:20);
+mesh (tx, ty, V');
+%contour(tx, ty, V', 0:20);
 
 xlabel ("x");
 ylabel ("y");
